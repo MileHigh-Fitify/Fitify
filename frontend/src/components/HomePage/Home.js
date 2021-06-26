@@ -72,7 +72,7 @@ const Home = () => {
                             </span>
                             <span style={{ "backgroundColor": "#FAFFF9" }}>
                                 <img src={plan} />
-                                <h4><Link className={Styles.Link} to="/diet">Custom Diet Plan</Link></h4>
+                                <h4><Link className={Styles.Link} to="/nutrition">Custom Diet Plan</Link></h4>
                             </span>
                             <span style={{ "backgroundColor": "#FBF1FF" }}>
                                 <img src={music} />

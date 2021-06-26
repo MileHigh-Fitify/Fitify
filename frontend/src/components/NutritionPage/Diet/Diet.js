@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Styles from './Diet.module.css'
 import food1 from '../../../images/nutrition/food2.png'
 import { Link } from 'react-router-dom'
 
-const Diet=()=>{
+const Diet=(props)=>{
+
+    const { diet, setDiet } = props;
+
+
     return(
         <div className={Styles.majorContainer}>
             <div className={Styles.header}>
@@ -16,37 +20,31 @@ const Diet=()=>{
                 </div>
             </div>
             <div className={Styles.foodList}>
-                <div className={Styles.food}>
-                    <div className={Styles.img}>
-                        <img src={food1} />
-                    </div>
-                    <div className={Styles.details}>
-                        <h3>200gms of Fresh food</h3>
-                        <h4>Breakfast - 120Kcal</h4> 
-                        <input type="checkbox" />                       
-                    </div>                    
-                </div>
-                <div className={Styles.food}>
-                    <div className={Styles.img}>
-                        <img src={food1} />
-                    </div>
-                    <div className={Styles.details}>
-                        <h3>200gms of Fresh food</h3>
-                        <h4>Breakfast - 120Kcal</h4> 
-                        <input type="checkbox" />                       
-                    </div>                    
-                </div>
-                <div className={Styles.food}>
-                    <div className={Styles.img}>
-                        <img src={food1} />
-                    </div>
-                    <div className={Styles.details}>
-                        <h3>200gms of Fresh food</h3>
-                        <h4>Breakfast - 120Kcal</h4> 
-                        <input type="checkbox" />                       
-                    </div>                    
-                </div>
-
+                {
+                    diet &&
+                    diet.map((food,index)=>        
+                            <div className={Styles.food} key={index}>
+                                <div className={Styles.img}>
+                                    <img src={food1} />
+                                </div>
+                                <div className={Styles.details}>
+                                    <h3>{food.food}</h3>
+                                    <h4>{food.cal}Kcal</h4> 
+                                    <input onChange={e=>{
+                                        let checked = e.target.checked;
+                                        setDiet(
+                                          diet.map((dat,ind) => {
+                                            if (index === ind) {
+                                              dat.status = checked;
+                                            }
+                                            return dat;
+                                          })
+                                        );
+                                      }} type="checkbox" checked={food.status}/>                       
+                                </div>                    
+                            </div>
+                        )
+                }
             </div>
         </div>
     )

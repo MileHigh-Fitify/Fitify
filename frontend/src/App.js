@@ -66,14 +66,14 @@ function App() {
           <Route path="/home">
             {
               auth?
-              <Home auth={auth}/> :
+              <Home  /> :
               <Redirect to="/"/>
             }
           </Route>
           <Route path="/nutrition">
             {
               auth?
-              <Nutrition /> :
+              <Nutrition auth={auth}/> :
               <Redirect to="/"/>
             }
           </Route>

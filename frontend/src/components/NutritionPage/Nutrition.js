@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Styles from '../NutritionPage/Nutrition.module.css'
 import Navbar from '../NavBar/Navbar'
 import Progress from '../common/progress/Progress'
@@ -10,7 +10,44 @@ import Diet from './Diet/Diet'
 import ChangePlan from './ChangePlan/ChangePlan'
 import { Route, Switch } from 'react-router-dom'
 
-const Nutrition = ()=>{
+const Nutrition = (props)=>{
+
+    const {auth} = props;
+
+
+    const [diet, setDiet] = useState([]);
+    const [nextMeal, setNextmeal] = useState({});
+
+    useEffect(()=>{
+        var fdb = {
+            diet:[
+                {food:"bread and butter", cal:"20", status:true},
+                {food:"egg", cal:"20", status:true},
+                {food:"rice", cal:"20", status:true},
+                {food:"brown bread", cal:"20", status:false},
+                {food:"milk", cal:"20", status:false},
+                {food:"chapati", cal:"20", status:false},
+            ]
+        }
+        setDiet(fdb.diet);
+    },[])
+
+
+     useEffect(async ()=>{
+         //console.log(diet);
+        console.log(diet)
+        for(var a=0;a<diet.length;a++){
+            if(diet[a].status === false){
+                await setNextmeal(diet[a]);
+                break;
+            }
+        }
+     },[diet])
+
+
+     useEffect(()=>{console.log(nextMeal)},[nextMeal])
+
+
     return(
         <div className={Styles.majorContainer}>
             <Navbar />
@@ -35,7 +72,7 @@ const Nutrition = ()=>{
                                     </div>
                                     <div>
                                         <h3>Next Meal</h3>
-                                        <h4>300 gm chicken & Rice</h4>
+                                        <h4>{nextMeal.food}</h4>
                                         
                                     </div>
                                 </div>
@@ -62,7 +99,7 @@ const Nutrition = ()=>{
                             </div>
                         </div>
                         <div className={Styles.diet}>
-                            <Diet />
+                            <Diet diet={diet} setDiet={setDiet}/>
                         </div>
 
                     </div>
