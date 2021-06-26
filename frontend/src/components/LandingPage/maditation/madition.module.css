@@ -6,20 +6,20 @@
     }
     .data{
         justify-content: center;
-        align-items: center;
-        width: 33vw;
+        /* align-items: center; */
+        width: 53vw;
         padding: 10vw;
         display: flex;
         flex-direction: column;
     }
 .head{
+    width:24vw;
     font-family: Poppins;
 font-style: normal;
 font-weight: 600;
 font-size: 3vw;
 line-height: 5vw;
 text-align: left;
-
 color: #EBEDFF;
     position: relative;
     

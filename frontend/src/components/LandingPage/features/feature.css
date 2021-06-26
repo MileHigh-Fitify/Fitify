@@ -5,7 +5,7 @@
 .feature-h{
     margin-top: 0px;
     position: relative;
-width: 27.30vw;
+width: 32.30vw;
 height: 9.54vh;
 
 padding: 1vw 1vw 0vw;
@@ -23,6 +23,7 @@ color: #0C080E;
     top: 0vh;
     left: 0vw;
     padding: 1vw;
+    padding-left: 2.5vw;
     
 position: relative;
 width: 95.46vw;
@@ -44,10 +45,11 @@ color: rgba(12, 8, 14, 0.74);
     padding-left:0vw ;
 }
 .pic{
+    padding-top: 8vh;
     padding-left: 8.5vw;
-position: relative;
-width: 14.47vw;
-height: 59.81vh;
+    position: relative;
+    width: 22.47vw;
+    height: 64.81vh;
 
 }
 .one{

@@ -14,7 +14,7 @@ function Madition() {
                     incididuntut labore et dolore magna aliqua.
                 </p>
             </div >
-            <div className={Styles.data2}><img style={{ "width": "36.9vw", "height": "71.08vh" }} src={medition} alt="meditation image"></img>
+            <div className={Styles.data2}><img style={{ "width": "36.9vw", "height": "71.08vh", }} src={medition} alt="meditation image"></img>
             </div>
 
         </div>
