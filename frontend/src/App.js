@@ -13,7 +13,7 @@ import Nutrition from './components/NutritionPage/Nutrition'
 // import Musicplayer from './components/musicPlayer/MusicPlayer'
 import Login from './components/Login/login';
 import Signup from './components/Signup/signup';
-import { useState ,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios'
 import Cookies from 'js-cookie';
 // import Meditionhome from './components/Medition/meditionhome';
@@ -22,14 +22,14 @@ import Cookies from 'js-cookie';
 function App() {
 
 
-  const [auth,setAuth] = useState(null)
+  const [auth, setAuth] = useState(null)
 
-  useEffect(async ()=>{
-    if(Cookies.get('user')){
-        const user = Cookies.get('user');
-        setAuth(user)
+  useEffect(async () => {
+    if (Cookies.get('user')) {
+      const user = Cookies.get('user');
+      setAuth(user)
     }
-  },[])
+  }, [])
 
   // useEffect(
   //   ()=>{
@@ -44,30 +44,30 @@ function App() {
         <Switch>
           <Route exact path="/">
             {
-              !auth?
-              <Landing /> :
-              <Redirect to="/home"/>
+              !auth ?
+                <Landing /> :
+                <Redirect to="/home" />
             }
           </Route>
           <Route path="/login">
             {
-              !auth?
-              <Login setAuth={setAuth}/> :
-              <Redirect to="/home"/>
+              !auth ?
+                <Login setAuth={setAuth} /> :
+                <Redirect to="/home" />
             }
           </Route>
           <Route path="/signup">
             {
-              !auth?
-              <Signup setAuth={setAuth}/> :
-              <Redirect to="/home"/>
+              !auth ?
+                <Signup setAuth={setAuth} /> :
+                <Redirect to="/home" />
             }
           </Route>
           <Route path="/home">
             {
-              auth?
-              <Home  /> :
-              <Redirect to="/"/>
+              auth ?
+                <Home /> :
+                <Redirect to="/" />
             }
           </Route>
           <Route path="/nutrition">
