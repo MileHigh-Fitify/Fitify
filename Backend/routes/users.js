@@ -4,11 +4,11 @@ var bcrypt = require('bcryptjs');
 // const jwt = require('jsonwebtoken');
 
 router.route('/signin').post(async (req, res) => {
-    const { username, email, password } = req.body;
+    const { email, password } = req.body;
 
 
     try {
-        if (!password || !email || !username) {
+        if (!password || !email) {
             return res.status(404).json({ message: 'enter all details' })
 
         }
@@ -20,12 +20,12 @@ router.route('/signin').post(async (req, res) => {
             // console.log(isPassCorrect);
 
             if (!isPassCorrect) {
-                return res.status(400).json({ message: "password is incorrect" });
+                return res.json("password is incorrect");
             }
             else {
-                res.status(400).json({ message: "you are signed in" });
+                res.json("you are signed in");
             }
-        } else { res.status(200).json({ message: "invalid user" }) }
+        } else { res.json("invalid user") }
 
         // res.status(404).json({ message: "user exists" })
     }
