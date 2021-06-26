@@ -1,4 +1,8 @@
 .about{
+    background-image: url('../../../images/dumbbell2.png');
+    background-repeat: no-repeat;
+    background-position-x: 54vw;
+    background-position-y: 20vh;
     margin-top: -1.06vh;
     background-color: #5A64C5;
     height: 100vh;
@@ -87,7 +91,7 @@ border-radius: 12px;
     width: 9.67vw;
     height: 19.4vh;
     left: 3.42vw;
-    top: 2.12vh;
+    top: 1.12vh;
 }
 .h1-about{
     position: absolute;

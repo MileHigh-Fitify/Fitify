@@ -47,7 +47,7 @@ const Navbar = () => {
             </div>
             {/* <div className={Styles.acct}>
                 <div>Hi Arnav!</div>
-                <img src={profilepic} />
+                <img src={profilepic} alt="" />
             </div> */}
 
         </div>

@@ -3,13 +3,13 @@ import './about.css'
 import card1 from '../../../images/fitness.png'
 import card2 from '../../../images/plan.png'
 import card3 from '../../../images/shopping-cart.png'
-import card4 from '../../../images/coin.png'
-import bglogo from '../../../images/dumbbell2.png'
+import card4 from '../../../images/medition/Meditation.png'
+// import bglogo from '../../../images/dumbbell2.png'
 
 function About() {
     return (
         <div className="about">
-            <img className="bg" src={bglogo} />
+            {/* <img className="bg" src={bglogo} alt="" /> */}
             <div>
                 <h1 className="about-h"> Know About Fitify</h1>
                 <p className="about-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -21,7 +21,7 @@ function About() {
                 <div class="card card1"><img className="fitness" src={card1} alt="" /><h1 className="h1-about">Workout</h1></div>
                 <div class="card card2"><img className="plan" src={card2} alt="" /><h1 className="h1-about">Nutrition</h1></div>
                 <div class="card card3"><img className="shoping-cart" src={card3} alt="" /><h1 className="h1-about">Shop</h1></div>
-                <div class="card card4"><img className="coin" src={card4} alt="" /><h1 className="h1-about">Coin</h1></div>
+                <div class="card card4"><img className="coin" src={card4} alt="" /><h1 className="h1-about" style={{ "marginLeft": "-1.5vw" }}>Maditation</h1></div>
             </div>
 
         </div>

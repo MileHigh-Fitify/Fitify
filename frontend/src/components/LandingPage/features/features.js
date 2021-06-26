@@ -18,11 +18,11 @@ function Features() {
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
                     ut aliquip ex ea commodo consequat.</p>
             </div>
-            <div className="d-flex">
-                <div ><img className="nutrition" src={feature1} alt="" /></div>
-                <div ><img className="workoutstraightplan" src={feature2} alt="" /></div>
-                <div ><img className="ecommerceshop" src={feature3} alt="" /></div>
-                <div ><img className="trainerSelection" src={feature4} alt="" /></div>
+            <div className="d">
+                <div class="one"><img className="pic" src={feature1} alt="" /></div>
+                <div class="two"><img className="pic" src={feature2} alt="" /></div>
+                <div class="one"><img className="pic" src={feature3} alt="" /></div>
+                <div class="two"><img className="pic" src={feature4} alt="" /></div>
             </div>
 
         </div>
