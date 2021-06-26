@@ -3,26 +3,37 @@ import { faLock, faVoicemail } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
 import Styles from './login.module.css'
 import food from '../../images/food.png'
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios'
+import Cookies from 'js-cookie'
 
 function Login() {
     const [email, setemail] = useState("");
     const [password, setpassword] = useState("");
-    const login = (e) => {
+    const [authStatus, setAuth] = useState(false);
+    const login = async (e) => {
         e.preventDefault()
         const logindetails = {
             email: email,
             password: password
         }
         console.log(logindetails)
-        axios.post('http://localhost:5000/user/signin', logindetails)
-            .then(res => {
-                window.alert(res.data)
+        await axios.post('http://localhost:5000/user/signin', logindetails)
+            .then( res => {
+                if(res.data.uid){
+                    Cookies.set('user', res.data.uid)
+                }
             });
-
-
+        if(Cookies.get('user')){
+            setAuth(true);
+        }
     }
+
+    if(authStatus){
+        return(
+            <Redirect to="home"/>
+        )
+    }else
     return (
         <div className={Styles.main}>
             <div className={Styles.container}>

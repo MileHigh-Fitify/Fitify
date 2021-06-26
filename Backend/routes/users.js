@@ -23,7 +23,7 @@ router.route('/signin').post(async (req, res) => {
                 return res.json("password is incorrect");
             }
             else {
-                res.json("you are signed in");
+                res.json({status:"you are signed in", uid:existingUser._id});
             }
         } else { res.json("invalid user") }
 
@@ -41,8 +41,8 @@ router.route('/signin').post(async (req, res) => {
 
 
 })
-router.route('/').get((req, res) => {
-    User.find()
+router.route('/:id').get((req, res) => {
+    User.findById(req.params.id)
         .then(user => res.json(user))
         .catch(err => res.status(400).json(`Error: ` + err));
 

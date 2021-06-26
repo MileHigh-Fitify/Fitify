@@ -1,14 +1,29 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Styles from '../NavBar/Navbar.module.css'
 import { Link } from 'react-router-dom'
 import profilepic from '../../images/profilepic.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { AnimatePresence, motion } from 'framer-motion';
+import axios from 'axios'
+import Cookies from 'js-cookie'
 
 const Navbar = () => {
 
     const [modal, setModal] = useState(false);
+    const [username, setUsername] = useState();
+
+    useEffect(async ()=>{
+        if(Cookies.get('user')){
+            const user = Cookies.get('user');
+            console.log(user)
+            await axios.get(`http://localhost:5000/user/${user}`)
+                .then(
+                    res=>setUsername(res.data.username)
+                )
+
+        }
+    },[])
 
     return (
         <div className={Styles.majorContainer}>
@@ -46,7 +61,7 @@ const Navbar = () => {
                 </AnimatePresence>
             </div>
             <div className={Styles.acct}>
-                <div>Hi Arnav!</div>
+                <div>Hi {username}!</div>
                 <img src={profilepic} />
             </div>
 
