@@ -10,7 +10,7 @@ import Nutrition from './components/NutritionPage/Nutrition'
 // import TrainerDetails from './components/TrainerPage/TrainerDetailsPage/TrainerDetails';
 // import Store from './components/Store/Store'
 // import Product from './components/Store/product/Product'
-// import Musicplayer from './components/musicPlayer/MusicPlayer'
+import Workoutgoing from './components/WorkoutPage/Workoutgoing'
 import Login from './components/Login/login';
 import Signup from './components/Signup/signup';
 import { useState, useEffect } from 'react';
@@ -72,9 +72,9 @@ function App() {
           </Route>
           <Route path="/nutrition">
             {
-              auth?
-              <Nutrition auth={auth}/> :
-              <Redirect to="/"/>
+              auth ?
+                <Nutrition auth={auth} /> :
+                <Redirect to="/" />
             }
           </Route>
           {/* 
@@ -92,11 +92,11 @@ function App() {
           </Route>
           <Route path="/shopProduct">
             <Product />
+          </Route>/*/}
+          <Route path="/workoutgoing">
+            <Workoutgoing />
           </Route>
-          <Route path="/musicplayer">
-            <Musicplayer />
-          </Route>
-          <Route path="/meditionhome">
+          {/*<Route path="/meditionhome">
             <Meditionhome />
           </Route>
           <Route path="/medition">
