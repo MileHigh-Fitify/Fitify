@@ -19,12 +19,12 @@ mongoose.connection.once('open', () => {
 })
 
 
-// const User = require('./routes/users')
+const User = require('./routes/users')
 // const userdetails = require('./routes/userdata')
 // const plan = require('./routes/dietplan.rout')
 // const workout = require('./routes/workoutplan.rout')
 
-// app.use('/user', User)
+app.use('/user', User)
 // app.use('/userprofile', userdetails)
 // app.use('/dietplan', plan)
 // app.use('/workout', workout)
