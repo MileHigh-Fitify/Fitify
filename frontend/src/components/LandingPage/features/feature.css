@@ -1,0 +1,67 @@
+.feature{
+    height: 105vh;
+    background-color: #EBEDFF;
+}
+.feature-h{
+    position: absolute;
+width: 27.30vw;
+height: 9.54vh;
+left: 2.76vw;
+top: 204.24vh;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 3.15vw;
+line-height: 72px;
+/* identical to box height */
+
+
+color: #0C080E;
+}
+.feature-p{
+    
+position: absolute;
+width: 95.46vw;
+height: 90px;
+left: 2.96vw;
+top: 216.18vh;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 1.71vw;
+line-height: 30px;
+/* or 115% */
+
+
+color: rgba(12, 8, 14, 0.74);
+}
+.nutrition{
+position: absolute;
+width: 14.47vw;
+height: 59.81vh;
+left: 8.68vw;
+top: 237.40vh;
+}
+.workoutstraightplan{
+    position: absolute;
+    width: 14.47vw;
+    height: 59.81vh;
+    left: 32.8vw;
+    top: 231.16vh;
+    }
+.ecommerceshop{
+    position: absolute;
+    width: 14.47vw;
+    height: 59.81vh;
+    left: 55.92vw;
+    top: 237.40vh;
+    }
+.trainerSelection{
+    position: absolute;
+    width: 14.47vw;
+    height: 59.81vh;
+    left: 78.94vw;
+    top: 231.16vh;
+    }
