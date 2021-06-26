@@ -1,6 +1,6 @@
 .contactus{
     background-color: #5A64C5;
-    height: 71.71vh;;
+    height: 73.71vh;
 }
 .full{
     display: flex;
@@ -46,7 +46,7 @@
 
 
 .map{
-    position: absolute;
+    
     width: 31.17vw;
     height: 45.70vh;
     left: 4.14vw;
@@ -58,8 +58,8 @@
     position: absolute;
     width: 15.5vw;
     height: 5.39vh;
-    left: 4.14vw;
-    top: 358.48vh;
+    left: 6.4vw;
+    top: 457.48vh;
     }
 .mar{
     height:2.65vh;
@@ -71,8 +71,8 @@
 .cp{
     line-height: 1vw;
     position: relative;
-    width: 13.15vw;
-    /* height: 1vh; */
+    width: 10.15vw;
+    height: 1vh;
     top: 0vh;
     font-size: 0.9vh;
     color: black;

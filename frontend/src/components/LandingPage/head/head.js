@@ -15,7 +15,7 @@ function head() {
             <div className="flex">
                 <div>
                     <div className="logo-text">
-                        <img className="logo" src={logo} />
+                        <img className="logo" src={logo} alt="" />
                         <h1 className="fiti">Fiti<span className="fy">fy</span></h1>
 
                     </div>
@@ -32,11 +32,11 @@ function head() {
 
                 </div>
                 <div className="images">
-                    <img className="workplan" src={workoutplan} />
-                    <img className="home" src={home} />
-                    <img className="image" src={image} />
-                    <img className="ecommerce" src={ecommerce} />
-                    <img className="coinsystem" src={coinsystem} />
+                    <img className="workplan" src={workoutplan} alt="" />
+                    <img className="home" src={home} alt="" />
+                    <img className="image" src={image} alt="" />
+                    <img className="ecommerce" src={ecommerce} alt="" />
+                    <img className="coinsystem" src={coinsystem} alt="" />
 
                 </div>
 
