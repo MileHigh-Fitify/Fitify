@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Landing from './components/LandingPage/Landing'
 import Home from './components/HomePage/Home'
-// import Workout from './components/WorkoutPage/WorkoutPage'
+import Workout from './components/WorkoutPage/WorkoutPage'
 // import Nutrition from './components/NutritionPage/Nutrition'
 // import Trainer from './components/TrainerPage/trainer'
 // import Contactus from './components/ContactusPage/Contactus'
@@ -33,10 +33,10 @@ function App() {
           <Route path="/home">
             <Home />
           </Route>
-          {/* <Route path="/workout">
+          <Route path="/workout">
             <Workout />
           </Route>
-          <Route path="/nutrition">
+          {/*<Route path="/nutrition">
             <Nutrition />
           </Route>
           <Route path="/trainer">
