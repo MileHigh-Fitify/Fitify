@@ -16,7 +16,8 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
     const [tip, setTip] = useState();
-    
+
+
     useEffect(()=>{
         var fdb = {
             tip:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -27,7 +28,7 @@ const Home = () => {
 
     return (
         <div className={Styles.majorContainer}>
-            <Navbar />
+            <Navbar/>
             <div className={Styles.main}>
                 <div className={Styles.dashboard}>
                     <div className={Styles.progress}>

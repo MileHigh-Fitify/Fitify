@@ -7,33 +7,32 @@ import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios'
 import Cookies from 'js-cookie'
 
-function Login() {
+const Login = (props)=> {
+
+    const {setAuth} = props;
+
+
     const [email, setemail] = useState("");
     const [password, setpassword] = useState("");
-    const [authStatus, setAuth] = useState(false);
+
+
+    
     const login = async (e) => {
         e.preventDefault()
         const logindetails = {
             email: email,
             password: password
         }
-        console.log(logindetails)
+        //console.log(logindetails)
         await axios.post('http://localhost:5000/user/signin', logindetails)
             .then( res => {
                 if(res.data.uid){
                     Cookies.set('user', res.data.uid)
+                    setAuth(res.data.uid)
                 }
             });
-        if(Cookies.get('user')){
-            setAuth(true);
-        }
     }
 
-    if(authStatus){
-        return(
-            <Redirect to="home"/>
-        )
-    }else
     return (
         <div className={Styles.main}>
             <div className={Styles.container}>

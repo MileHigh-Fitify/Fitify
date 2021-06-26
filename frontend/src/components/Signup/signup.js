@@ -5,9 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLock, faPhone, faUser, faVoicemail } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 
-function Signup() {
+function Signup(props) {
     const [Username, setUsername] = useState("")
     const [phoneno, setphoneno] = useState("")
     const [email, setemail] = useState("")
@@ -17,7 +18,13 @@ function Signup() {
     // useEffect(() => {
     //     console.log(User)
     // }, [User])
-    const Submit = (e) => {
+
+    const {setAuth} = props;
+
+
+
+
+    const Submit = async (e) => {
         e.preventDefault();
         var details = {
             username: Username,
@@ -26,12 +33,24 @@ function Signup() {
             password: password,
             cpassword: cpassword
         }
-        console.log(details)
-        axios.post('http://localhost:5000/user/signup', details)
+        //console.log(details)
+        await axios.post('http://localhost:5000/user/signup', details)
             .then(res => {
                 window.alert(res.data)
             });
 
+        const logindetails = {
+            email: email,
+            password: password
+        }
+        //console.log(logindetails)
+        await axios.post('http://localhost:5000/user/signin', logindetails)
+            .then( res => {
+                if(res.data.uid){
+                    Cookies.set('user', res.data.uid)
+                    setAuth(res.data.uid)
+                }
+            });
 
 
     }
