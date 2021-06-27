@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Styles from './ChangePlan.module.css'
 import food from '../../../images/nutrition/food2.png'
 import axios from 'axios'
@@ -6,7 +6,7 @@ import { Redirect } from 'react-router-dom'
 
 const ChangePlan = (props)=>{
 
-    const {auth, setDiet} = props;
+    const {auth, setDiet, diet} = props;
 
     const [type, setType] = useState("fatloss");
     const [sort, setSort] = useState("veg");
@@ -21,6 +21,22 @@ const ChangePlan = (props)=>{
         border: "2px solid #bcb5b5",
         color: "#000"
     }
+
+
+
+    useEffect(async ()=>{
+        await axios.get(`http://localhost:5000/dietplan/${auth}`)
+            .then(res=>{
+                if(res.data){
+                    setDiet(res.data.dietPlan);                
+                }else{
+                    setDiet(null);
+                }
+            })
+    })
+
+
+
 
 
     const createDiet = async ()=>{
@@ -42,11 +58,51 @@ const ChangePlan = (props)=>{
             "dietPlan":dietplan
         }
         console.log(form1)
+        
         await axios.post("http://localhost:5000/dietplan/add", form1)
             .then(res => {
                 window.alert(res.data);
+        })
+
+         
+         await axios.get(`http://localhost:5000/dietplan/${auth}`)
+            .then(res=>{
+                if(res.data){
+                    setDiet(res.data.dietPlan);                
+                }else{
+                    setDiet(null);
+                }
+            })
+        setDone(true);
+    }
+
+
+    const updateDiet = async ()=>{
+        const form = {
+            "type":type,
+            "sort":sort,
+            "times":times
+        }
+        console.log(form)
+        var dietplan= null;
+        await axios.post("http://localhost:5000/predietplan/", form)
+            .then(res => {
+                dietplan = res.data.dietPlan;
+                console.log(dietplan)
             })
 
+        const form1 ={
+            "uid":auth,
+            "dietPlan":dietplan
+        }
+        console.log(form1)
+        
+        await axios.post(`http://localhost:5000/dietplan/update/${auth}`,form1)
+            .then(res=>{
+                window.alert(res.data)
+            })
+
+         
          await axios.get(`http://localhost:5000/dietplan/${auth}`)
             .then(res=>{
                 if(res.data){
@@ -124,7 +180,7 @@ const ChangePlan = (props)=>{
                 <div className={Styles.button}>
                     Custom diet
                 </div>
-                <div className={Styles.button} onClick={createDiet}>
+                <div className={Styles.button} onClick={(diet)?updateDiet : createDiet}>
                     create diet
                 </div>
             </div>

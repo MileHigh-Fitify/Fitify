@@ -143,7 +143,7 @@ const Nutrition = (props)=>{
                     }
                 </Route>
                 <Route path="/nutrition/change">
-                        <ChangePlan auth={auth} setDiet={setDiet}/>
+                        <ChangePlan auth={auth} setDiet={setDiet} diet={diet}/>
                 </Route>
             </Switch>
         </div>

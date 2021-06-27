@@ -22,13 +22,17 @@ mongoose.connection.once('open', () => {
 const User = require('./routes/users')
 // const userdetails = require('./routes/userdata')
 const plan = require('./routes/dietplan')
+const workoutplan = require('./routes/workout')
 const preplan = require('./routes/predietplan') 
+const preworkout = require('./routes/preworkout') 
 // const workout = require('./routes/workoutplan.rout')
 
 app.use('/user', User)
 // app.use('/userprofile', userdetails)
 app.use('/dietplan', plan)
+app.use('/workoutplan', workoutplan)
 app.use('/predietplan', preplan)
+app.use('/preworkout', preworkout)
 // app.use('/workout', workout)
 
 app.listen(port, () => {
