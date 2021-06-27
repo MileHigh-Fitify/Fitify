@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Landing from './components/LandingPage/Landing'
 import Home from './components/HomePage/Home'
-// import Workout from './components/WorkoutPage/WorkoutPage'
+import Workout from './components/WorkoutPage/WorkoutPage'
 import Nutrition from './components/NutritionPage/Nutrition'
 // import Trainer from './components/TrainerPage/trainer'
 // import Contactus from './components/ContactusPage/Contactus'
@@ -16,6 +16,7 @@ import Signup from './components/Signup/signup';
 import { useState, useEffect } from 'react';
 import axios from 'axios'
 import Cookies from 'js-cookie';
+import ChangeworkoutPlan from './components/WorkoutPage/workoutchange';
 // import Meditionhome from './components/Medition/meditionhome';
 // import Medition from './components/Medition/Medition';
 
@@ -77,11 +78,14 @@ function App() {
                 <Redirect to="/" />
             }
           </Route>
-          {/* 
+          <Route path="/workoutplan">
+            <ChangeworkoutPlan />
+          </Route>
+
           <Route path="/workout">
             <Workout />
           </Route>
-          <Route path="/trainer">
+          {/*<Route path="/trainer">
             <Trainer />
           </Route>
           <Route path="/trainerdetails">

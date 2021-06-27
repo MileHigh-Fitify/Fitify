@@ -17,26 +17,47 @@ const Workout = () => {
 
                 <div className={Styles.progress}>
                     <Progress />
-                </div>
-                <div className={Styles.workoutProgress}>
 
-                    <div className={Styles.workouts1}>
-                        <img className={Styles.progressImg} src={waightLifting} alt="waightLifting" />
-                        <div>
-                            <h6 className={Styles.progressH6}>Start<br /> Today’s Workout</h6>
-                            <p className={Styles.para}>1/2 Completed</p>
+                    <div className={Styles.workoutProgress}>
+
+                        <div className={Styles.workouts1}>
+                            <img className={Styles.progressImg} src={waightLifting} alt="waightLifting" />
+                            <div>
+                                <h6 className={Styles.progressH6}>Start<br /> Today’s Workout</h6>
+                                <p className={Styles.para}>1/2 Completed</p>
+                            </div>
+
+                        </div>
+                        <div className={Styles.workouts1}>
+                            <img className={Styles.progressImg} src={sprinting} alt="sprinting" />
+                            <div>
+                                <h6 className={Styles.progressH6}>Start<br /> Sprint Running</h6>
+                                <p className={Styles.para}>3.2/6 km Completed</p>
+                            </div>
+
                         </div>
 
                     </div>
-                    <div className={Styles.workouts2}>
-                        <img className={Styles.progressImg} src={sprinting} alt="sprinting" />
-                        <div>
-                            <h6 className={Styles.progressH6}>Start<br /> Sprint Running</h6>
-                            <p className={Styles.para}>3.2/6 km Completed</p>
+                    <div className={Styles.workoutProgress}>
+
+                        <div className={Styles.workouts1}>
+                            <img className={Styles.progressImg} src={waightLifting} alt="waightLifting" />
+                            <div>
+                                <h6 className={Styles.progressH6}>Start<br /> Today’s Workout</h6>
+                                <p className={Styles.para}>1/2 Completed</p>
+                            </div>
+
+                        </div>
+                        <div className={Styles.workouts1}>
+                            <img className={Styles.progressImg} src={sprinting} alt="sprinting" />
+                            <div>
+                                <h6 className={Styles.progressH6}>Start<br /> Sprint Running</h6>
+                                <p className={Styles.para}>3.2/6 km Completed</p>
+                            </div>
+
                         </div>
 
                     </div>
-
                 </div>
 
                 <hr className={Styles.hr} />
