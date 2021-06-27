@@ -17,8 +17,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios'
 import Cookies from 'js-cookie';
 import ChangeworkoutPlan from './components/WorkoutPage/workoutchange';
-// import Meditionhome from './components/Medition/meditionhome';
-// import Medition from './components/Medition/Medition';
+import Meditionhome from './components/Medition/meditionhome';
+import Medition from './components/Medition/Medition';
 
 function App() {
 
@@ -100,13 +100,13 @@ function App() {
           <Route path="/workoutgoing">
             <Workoutgoing />
           </Route>
-          {/*<Route path="/meditionhome">
+          <Route path="/meditionhome">
             <Meditionhome />
           </Route>
           <Route path="/medition">
             <Medition />
           </Route>
-          <Route path="/contactus">
+          {/* <Route path="/contactus">
             <Contactus />
           </Route> */}
         </Switch>

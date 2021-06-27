@@ -26,12 +26,7 @@ function Medition() {
 
                     <img className={Styles.medition} src={medition} alt="medition" />
                     <div class={Styles.para}>
-                        <h1 className={Styles.head}>Keep Kalm!</h1>
-                        <p className={Styles.p}>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                            Error laboriosam veniam harum beatae placeat voluptatum expedita
-                            explicabo omnis vel cum blanditiis, corporis, magni praesentium quam
-                            temporibus eaque nemo fugiat doloremque.
-                        </p>
+                        <iframe src="https://open.spotify.com/embed/artist/19IddKCQ0wNuG2INNowgC5" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
                         <button className={Styles.button} >Pause</button>
                         <button className={Styles.Stop} >Stop</button>
