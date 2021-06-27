@@ -8,7 +8,7 @@ import water from '../../images/keyfeatures/water.png'
 import shop from '../../images/keyfeatures/shopping-cart.png'
 import Diet from './Diet/Diet'
 import ChangePlan from './ChangePlan/ChangePlan'
-import { Route, Switch } from 'react-router-dom'
+import { Redirect, Route, Switch } from 'react-router-dom'
 
 const Nutrition = (props)=>{
 
@@ -36,12 +36,13 @@ const Nutrition = (props)=>{
      useEffect(async ()=>{
          //console.log(diet);
         console.log(diet)
+        if(diet){
         for(var a=0;a<diet.length;a++){
             if(diet[a].status === false){
                 await setNextmeal(diet[a]);
                 break;
             }
-        }
+        }}
      },[diet])
 
 
@@ -53,6 +54,8 @@ const Nutrition = (props)=>{
             <Navbar />
             <Switch>
                 <Route exact path="/nutrition/">
+                    {
+                    (diet)?
                     <div className={Styles.main}>
                         <div className={Styles.info}>
                             <Progress />
@@ -101,8 +104,9 @@ const Nutrition = (props)=>{
                         <div className={Styles.diet}>
                             <Diet diet={diet} setDiet={setDiet}/>
                         </div>
-
-                    </div>
+                    </div> :
+                    <Redirect to="/nutrition/change" />
+                    }
                 </Route>
                 <Route path="/nutrition/change">
                         <ChangePlan />
