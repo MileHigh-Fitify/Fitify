@@ -61,7 +61,12 @@ const Navbar = () => {
             </div>
             <div className={Styles.acct}>
                 <div>Hi {username}!</div>
-                <img src={profilepic} />
+                <img src={profilepic} 
+                    onClick={()=>{
+                        Cookies.remove('user')
+                        window.location = "/"
+            
+                }}/>
             </div>
 
         </div>
