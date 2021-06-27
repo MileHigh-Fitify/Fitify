@@ -17,7 +17,7 @@ const Navbar = () => {
         if (Cookies.get('user')) {
             const user = Cookies.get('user');
             console.log(user)
-            await axios.get(`http://localhost:5000/user/${user}`)
+            await axios.get(`https://fitifyy.herokuapp.com/user/${user}`)
                 .then(
                     res => setUsername(res.data.username)
                 )
@@ -32,7 +32,7 @@ const Navbar = () => {
                     <li><Link to="/home">Home</Link></li>
                     <li><Link to="/workout" >Workout</Link></li>
 
-                    <li><Link to="/meditionhome" >Maditation</Link></li>
+                    <li><Link to="/meditionhome" >Meditation</Link></li>
                     <li><Link to="/nutrition" >Nutrition</Link></li>
                     <li><Link to="/shop" >Shop</Link></li>
                 </ul>
@@ -53,7 +53,7 @@ const Navbar = () => {
                         >
                             <li><Link to="/home" onClick={() => { setModal(false) }}>Home</Link></li>
                             <li><Link to="/workout" onClick={() => { setModal(false) }} >Workout</Link></li>
-                            <li><Link to="/meditionhome" onClick={() => { setModal(false) }}>Maditation</Link></li>
+                            <li><Link to="/meditionhome" onClick={() => { setModal(false) }}>Meditation</Link></li>
                             <li><Link to="/nutrition" onClick={() => { setModal(false) }} >nutrition</Link></li>
                         </motion.ul>
                     }
@@ -61,12 +61,12 @@ const Navbar = () => {
             </div>
             <div className={Styles.acct}>
                 <div>Hi {username}!</div>
-                <img src={profilepic} 
-                    onClick={()=>{
+                <img src={profilepic}
+                    onClick={() => {
                         Cookies.remove('user')
                         window.location = "/"
-            
-                }}/>
+
+                    }} />
             </div>
 
         </div>

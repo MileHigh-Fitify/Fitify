@@ -11,21 +11,21 @@ import ChangePlan from './ChangePlan/ChangePlan'
 import { Redirect, Route, Switch } from 'react-router-dom'
 import axios from 'axios'
 
-const Nutrition = (props)=>{
+const Nutrition = (props) => {
 
-    const {auth} = props;
+    const { auth } = props;
 
 
     const [diet, setDiet] = useState([]);
     const [nextMeal, setNextmeal] = useState({});
 
-    useEffect(()=>{
+    useEffect(() => {
 
-        axios.get(`http://localhost:5000/dietplan/${auth}`)
-            .then(res=>{
-                if(res.data){
-                    setDiet(res.data.dietPlan);                
-                }else{
+        axios.get(`https://fitifyy.herokuapp.com/dietplan/${auth}`)
+            .then(res => {
+                if (res.data) {
+                    setDiet(res.data.dietPlan);
+                } else {
                     setDiet(null);
                 }
             })
@@ -42,39 +42,40 @@ const Nutrition = (props)=>{
         //     ]
         // }
         // setDiet(fdb.diet);
-    },[])
+    }, [])
 
 
 
-     useEffect(async ()=>{
-         //console.log(diet);
+    useEffect(async () => {
+        //console.log(diet);
         console.log(diet)
-        if(diet){
-        for(var a=0;a<diet.length;a++){
-            if(diet[a].status === false){
-                await setNextmeal(diet[a]);
-                break;
+        if (diet) {
+            for (var a = 0; a < diet.length; a++) {
+                if (diet[a].status === false) {
+                    await setNextmeal(diet[a]);
+                    break;
+                }
             }
-        }}
-     },[diet])
+        }
+    }, [diet])
 
 
-     //useEffect(()=>{console.log(nextMeal)},[nextMeal])
+    //useEffect(()=>{console.log(nextMeal)},[nextMeal])
 
 
 
-     const save = ()=>{
-         const form = {
-             "uid":auth,
-             "dietPlan":diet
-         }
+    const save = () => {
+        const form = {
+            "uid": auth,
+            "dietPlan": diet
+        }
 
-         axios.post(`http://localhost:5000/dietplan/update/${auth}`,form)
-            .then(res=>{
+        axios.post(`https://fitifyy.herokuapp.com/dietplan/update/${auth}`, form)
+            .then(res => {
                 window.alert(res.data)
             })
 
-     }
+    }
 
 
 
@@ -83,67 +84,67 @@ const Nutrition = (props)=>{
 
 
 
-    return(
+    return (
         <div className={Styles.majorContainer}>
             <Navbar />
             <Switch>
                 <Route exact path="/nutrition/">
                     {
-                    (diet)?
-                    <div className={Styles.main}>
-                        <div className={Styles.info}>
-                            <Progress />
-                            <div className={Styles.mealNav}>
-                                <div className={Styles.mealPlan}>
-                                    <div>
-                                        <img src={food1} />
-                                    </div>
-                                    <div>
-                                        <h3>Today's Meal Plan</h3>
-                                        
-                                    </div>                            
-                                </div>
-                                <div className={Styles.mealPlan}>
-                                    <div>
-                                        <img src={food2} />
-                                    </div>
-                                    <div>
-                                        <h3>Next Meal</h3>
-                                        <h4>{nextMeal.food}</h4>
-                                        
-                                    </div>
-                                </div>
+                        (diet) ?
+                            <div className={Styles.main}>
+                                <div className={Styles.info}>
+                                    <Progress />
+                                    <div className={Styles.mealNav}>
+                                        <div className={Styles.mealPlan}>
+                                            <div>
+                                                <img src={food1} />
+                                            </div>
+                                            <div>
+                                                <h3>Today's Meal Plan</h3>
 
-                            </div>
-                            <div className={Styles.mealNav}>
-                                <div className={Styles.water}>
-                                    <div className={Styles.img}>
-                                        <img src={water} />
+                                            </div>
+                                        </div>
+                                        <div className={Styles.mealPlan}>
+                                            <div>
+                                                <img src={food2} />
+                                            </div>
+                                            <div>
+                                                <h3>Next Meal</h3>
+                                                <h4>{nextMeal.food}</h4>
+
+                                            </div>
+                                        </div>
+
                                     </div>
-                                    <div className={Styles.details}>
-                                        <h3>Glasses of water taken</h3>
-                                        <h4>3/14 Glasses</h4>
-                                    </div>                            
+                                    <div className={Styles.mealNav}>
+                                        <div className={Styles.water}>
+                                            <div className={Styles.img}>
+                                                <img src={water} />
+                                            </div>
+                                            <div className={Styles.details}>
+                                                <h3>Glasses of water taken</h3>
+                                                <h4>3/14 Glasses</h4>
+                                            </div>
+                                        </div>
+                                        <div className={Styles.mealPlan}>
+                                            <div className={Styles.img}>
+                                                <img src={shop} />
+                                            </div>
+                                            <div>
+                                                <h3>Shop for Ingredients</h3>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className={Styles.mealPlan}>
-                                    <div className={Styles.img}>
-                                        <img src={shop} />
-                                    </div>
-                                    <div>
-                                        <h3>Shop for Ingredients</h3>
-                                    </div>
+                                <div className={Styles.diet}>
+                                    <Diet diet={diet} setDiet={setDiet} save={save} />
                                 </div>
-                            </div>
-                        </div>
-                        <div className={Styles.diet}>
-                            <Diet diet={diet} setDiet={setDiet} save={save}/>
-                        </div>
-                    </div> :
-                    <Redirect to="/nutrition/change" />
+                            </div> :
+                            <Redirect to="/nutrition/change" />
                     }
                 </Route>
                 <Route path="/nutrition/change">
-                        <ChangePlan auth={auth} setDiet={setDiet} diet={diet}/>
+                    <ChangePlan auth={auth} setDiet={setDiet} diet={diet} />
                 </Route>
             </Switch>
         </div>
