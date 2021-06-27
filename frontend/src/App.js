@@ -5,9 +5,9 @@ import Landing from './components/LandingPage/Landing'
 import Home from './components/HomePage/Home'
 import Workout from './components/WorkoutPage/WorkoutPage'
 import Nutrition from './components/NutritionPage/Nutrition'
-// import Trainer from './components/TrainerPage/trainer'
+import Trainer from './components/TrainerPage/trainer'
 // import Contactus from './components/ContactusPage/Contactus'
-// import TrainerDetails from './components/TrainerPage/TrainerDetailsPage/TrainerDetails';
+import TrainerDetails from './components/TrainerPage/TrainerDetailsPage/TrainerDetails';
 // import Store from './components/Store/Store'
 // import Product from './components/Store/product/Product'
 import Workoutgoing from './components/WorkoutPage/Workoutgoing'
@@ -85,13 +85,13 @@ function App() {
           <Route path="/workout">
             <Workout />
           </Route>
-          {/*<Route path="/trainer">
+          <Route path="/trainer">
             <Trainer />
           </Route>
           <Route path="/trainerdetails">
             <TrainerDetails />
           </Route>
-          <Route path="/shop">
+          {/*<Route path="/shop">
             <Store />
           </Route>
           <Route path="/shopProduct">
