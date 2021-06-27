@@ -1,22 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Styles from './meditionhome.module.css'
 import Navbar from '../NavBar/Navbar'
 import Slider from "@material-ui/core/Slider";
 import medition from '../../images/medition/Meditation.png'
 
 
-function Medition() {
-    const marks = [
-        {
-            value: 0,
-            label: "0 sec"
-        },
+function Medition(props) {
+    
+    const {time, setTime} = props;
 
-        {
-            value: 100,
-            label: "100 sec"
-        }
-    ];
+    setTimeout(()=>{
+        window.location = "/home"
+    },[time])
     return (
         <div>
             <div className={Styles.majorContainer}>
@@ -31,14 +26,7 @@ function Medition() {
                         <button className={Styles.button1} >Pause</button>
                         <button className={Styles.Stop} >Stop</button>
                         <h6 className={Styles.time}></h6>
-                        <Slider className={Styles.slider}
-                            defaultValue={20}
-                            // getAriaValueText={valuetext}
-                            aria-labelledby="discrete-slider-custom"
-                            // step={10}
-                            // valueLabelDisplay="auto"
-                            marks={marks}
-                        />
+                        <div className={Styles.slider} style={{"width":"40%"}}></div>
                     </div>
 
 
