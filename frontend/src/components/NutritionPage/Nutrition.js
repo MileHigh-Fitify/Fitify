@@ -9,6 +9,7 @@ import shop from '../../images/keyfeatures/shopping-cart.png'
 import Diet from './Diet/Diet'
 import ChangePlan from './ChangePlan/ChangePlan'
 import { Redirect, Route, Switch } from 'react-router-dom'
+import axios from 'axios'
 
 const Nutrition = (props)=>{
 
@@ -19,18 +20,30 @@ const Nutrition = (props)=>{
     const [nextMeal, setNextmeal] = useState({});
 
     useEffect(()=>{
-        var fdb = {
-            diet:[
-                {food:"bread and butter", cal:"20", status:true},
-                {food:"egg", cal:"20", status:true},
-                {food:"rice", cal:"20", status:true},
-                {food:"brown bread", cal:"20", status:false},
-                {food:"milk", cal:"20", status:false},
-                {food:"chapati", cal:"20", status:false},
-            ]
-        }
-        setDiet(fdb.diet);
+
+        axios.get(`http://localhost:5000/dietplan/${auth}`)
+            .then(res=>{
+                if(res.data){
+                    setDiet(res.data.dietPlan);                
+                }else{
+                    setDiet(null);
+                }
+            })
+
+
+        // var fdb = {
+        //     diet:[
+        //         {food:"bread and butter", cal:"20", status:true},
+        //         {food:"egg", cal:"20", status:true},
+        //         {food:"rice", cal:"20", status:true},
+        //         {food:"brown bread", cal:"20", status:false},
+        //         {food:"milk", cal:"20", status:false},
+        //         {food:"chapati", cal:"20", status:false},
+        //     ]
+        // }
+        // setDiet(fdb.diet);
     },[])
+
 
 
      useEffect(async ()=>{
@@ -46,7 +59,28 @@ const Nutrition = (props)=>{
      },[diet])
 
 
-     useEffect(()=>{console.log(nextMeal)},[nextMeal])
+     //useEffect(()=>{console.log(nextMeal)},[nextMeal])
+
+
+
+     const save = ()=>{
+         const form = {
+             "uid":auth,
+             "dietPlan":diet
+         }
+
+         axios.post(`http://localhost:5000/dietplan/update/${auth}`,form)
+            .then(res=>{
+                window.alert(res.data)
+            })
+
+     }
+
+
+
+
+
+
 
 
     return(
@@ -102,14 +136,14 @@ const Nutrition = (props)=>{
                             </div>
                         </div>
                         <div className={Styles.diet}>
-                            <Diet diet={diet} setDiet={setDiet}/>
+                            <Diet diet={diet} setDiet={setDiet} save={save}/>
                         </div>
                     </div> :
                     <Redirect to="/nutrition/change" />
                     }
                 </Route>
                 <Route path="/nutrition/change">
-                        <ChangePlan />
+                        <ChangePlan auth={auth} setDiet={setDiet}/>
                 </Route>
             </Switch>
         </div>

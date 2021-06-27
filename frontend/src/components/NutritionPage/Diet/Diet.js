@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Diet=(props)=>{
 
-    const { diet, setDiet } = props;
+    const { diet, setDiet, save } = props;
 
 
     return(
@@ -16,7 +16,7 @@ const Diet=(props)=>{
                     <Link to="/nutrition/change">
                         <span>Change Plan</span>
                     </Link>
-                    <span>Workout Plan</span>                
+                    <span onClick={save}>Save details</span>                
                 </div>
             </div>
             <div className={Styles.foodList}>

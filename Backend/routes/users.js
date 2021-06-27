@@ -51,6 +51,7 @@ router.route('/signup').post(async (req, res) => {
     // const name = req.body.name;
     const { username, phoneno, email, password, cpassword } = req.body;
     const existingUser = await User.findOne({ email: email });
+    const waterCount = 0;
 
     if (existingUser) {
         res.json('user already exists');
@@ -68,6 +69,7 @@ router.route('/signup').post(async (req, res) => {
                 email,
                 password,
                 cpassword,
+                waterCount,
             });
             newUser.save()
                 .then(() => res.json('user added'))

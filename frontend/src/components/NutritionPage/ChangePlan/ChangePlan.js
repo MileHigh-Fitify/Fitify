@@ -1,13 +1,17 @@
 import React, { useState } from 'react'
 import Styles from './ChangePlan.module.css'
 import food from '../../../images/nutrition/food2.png'
+import axios from 'axios'
+import { Redirect } from 'react-router-dom'
 
-const ChangePlan = ()=>{
+const ChangePlan = (props)=>{
 
+    const {auth, setDiet} = props;
 
     const [type, setType] = useState("fatloss");
     const [sort, setSort] = useState("veg");
     const [times, setTimes] = useState(3);
+    const [done,setDone] = useState(false)
 
     const s={
         border: "2px solid #5a64c5",
@@ -19,6 +23,46 @@ const ChangePlan = ()=>{
     }
 
 
+    const createDiet = async ()=>{
+        const form = {
+            "type":type,
+            "sort":sort,
+            "times":times
+        }
+        console.log(form)
+        var dietplan= null;
+        await axios.post("http://localhost:5000/predietplan/", form)
+            .then(res => {
+                dietplan = res.data.dietPlan;
+                console.log(dietplan)
+            })
+
+        const form1 ={
+            "uid":auth,
+            "dietPlan":dietplan
+        }
+        console.log(form1)
+        await axios.post("http://localhost:5000/dietplan/add", form1)
+            .then(res => {
+                window.alert(res.data);
+            })
+
+         await axios.get(`http://localhost:5000/dietplan/${auth}`)
+            .then(res=>{
+                if(res.data){
+                    setDiet(res.data.dietPlan);                
+                }else{
+                    setDiet(null);
+                }
+            })
+        setDone(true);
+    }
+
+    if(done){
+        return(
+            <Redirect to="/nutrition"/>
+        )
+    }else
     return(
         <div className={Styles.majorContainer}>
             <div className={Styles.Header}>
@@ -80,7 +124,7 @@ const ChangePlan = ()=>{
                 <div className={Styles.button}>
                     Custom diet
                 </div>
-                <div className={Styles.button}>
+                <div className={Styles.button} onClick={createDiet}>
                     create diet
                 </div>
             </div>
