@@ -8,8 +8,8 @@ import Nutrition from './components/NutritionPage/Nutrition'
 import Trainer from './components/TrainerPage/trainer'
 // import Contactus from './components/ContactusPage/Contactus'
 import TrainerDetails from './components/TrainerPage/TrainerDetailsPage/TrainerDetails';
-// import Store from './components/Store/Store'
-// import Product from './components/Store/product/Product'
+import Store from './components/Store/Store'
+import Product from './components/Store/product/Product'
 import Workoutgoing from './components/WorkoutPage/Workoutgoing'
 import Login from './components/Login/login';
 import Signup from './components/Signup/signup';
@@ -91,12 +91,12 @@ function App() {
           <Route path="/trainerdetails">
             <TrainerDetails />
           </Route>
-          {/*<Route path="/shop">
+          <Route path="/shop">
             <Store />
           </Route>
           <Route path="/shopProduct">
             <Product />
-          </Route>/*/}
+          </Route>/
           <Route path="/workoutgoing">
             <Workoutgoing />
           </Route>
