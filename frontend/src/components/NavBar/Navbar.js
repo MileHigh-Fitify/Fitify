@@ -35,9 +35,6 @@ const Navbar = () => {
                     <li><Link to="/meditionhome" >Maditation</Link></li>
                     <li><Link to="/nutrition" >Nutrition</Link></li>
                     <li><Link to="/shop" >Shop</Link></li>
-                    <li><Link to="/Contactus" >Contact us</Link></li>
-
-                    <li><Link to="/home" >More..</Link></li>
                 </ul>
             </div>
             <div className={Styles.ListM}>
@@ -58,8 +55,6 @@ const Navbar = () => {
                             <li><Link to="/workout" onClick={() => { setModal(false) }} >Workout</Link></li>
                             <li><Link to="/meditionhome" onClick={() => { setModal(false) }}>Maditation</Link></li>
                             <li><Link to="/nutrition" onClick={() => { setModal(false) }} >nutrition</Link></li>
-                            <li><Link to="/Contactus" onClick={() => { setModal(false) }}>Contact us</Link></li>
-                            <li><Link to="/home" onClick={() => { setModal(false) }} >More..</Link></li>
                         </motion.ul>
                     }
                 </AnimatePresence>

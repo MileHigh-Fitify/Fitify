@@ -79,11 +79,14 @@ function App() {
             }
           </Route>
           <Route path="/workoutplan">
-            <ChangeworkoutPlan />
+            <ChangeworkoutPlan auth={auth}/>
           </Route>
 
-          <Route path="/workout">
-            <Workout />
+          <Route path="/workout">{
+              auth ?
+              <Workout auth={auth} /> :
+                <Redirect to="/" />
+            }
           </Route>
           <Route path="/trainer">
             <Trainer />
