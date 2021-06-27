@@ -13,10 +13,8 @@ function Features() {
 
             <div>
                 <h1 className="feature-h"> Exciting Features </h1>
-                <p className="feature-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                    ut aliquip ex ea commodo consequat.</p>
+                <p className="feature-p">“Design is not just what it looks like and feels like. Design is how it works.”
+                    The highlights, our exciting features, for example, online business, day-by-day diet, or exercise plans, online consultancy help you monitor your bit-by-bit progress and accomplish total serenity.</p>
             </div>
             <div className="d">
                 <div class="one"><img className="pic" src={feature1} alt="" /></div>
