@@ -47,6 +47,10 @@
     
     color: #5A64C5;
   }
+  iframe{
+      margin-top: 15vh;
+      height: 60vh;
+  }
   .p{
     font-family: Poppins;
     font-style: normal;
@@ -79,16 +83,26 @@
       top: 35vh;
       width: 15vw;
       height: 5vh;
-      /* left: -10vw; */
+      left: -10vw;
       transition: 0.2s;
 
+  }
+  .button1{
+    background-color: #5761C2;
+    border: 0;
+    position: relative;
+    top: 0vh;
+    width: 15vw;
+    height: 5vh;
+    left: 0vw;
+    transition: 0.2s;
   }
   .Stop{
       background-color: #5761C2;
       
     border: 0;
     position: relative;
-    top: 35vh;
+    /* top: 35vh; */
     width: 15vw;
     height: 5vh;
     left:1vw;
@@ -104,10 +118,17 @@
     height: 2vh;
     position: relative;
     width: 20vw !important;
-    top:17vh
+    /* top:17vh */
 }
 @media  screen and (max-width:890px) {
+    iframe {
+        margin-left:5vw ;
+        margin-top: 35vh;
+        height: 88vh;
+        border-radius: 1vw;
+    }
     .main{
+        overflow: hidden;
         display: block;
     }
     .medition{
@@ -145,18 +166,23 @@
 
     }
     .Stop{
+        width: 20vw;
         left: 2vw;
+        top: -100vh;
+    
     }
     .duration{
         position: relative;
-        top: 28vh;
+        /* top: 28vh; */
         width: 45vw;
         left: 19vw;
     }
     .button{
+        top: -100vh;
+    
         width: 30vw;
         position: relative;
-        left:-21vw;
+        left: -2vh;
     }
 }
 @media screen and (max-height:500px){

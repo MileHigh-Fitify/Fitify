@@ -3,21 +3,22 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Landing from './components/LandingPage/Landing'
 import Home from './components/HomePage/Home'
-// import Workout from './components/WorkoutPage/WorkoutPage'
+import Workout from './components/WorkoutPage/WorkoutPage'
 import Nutrition from './components/NutritionPage/Nutrition'
-// import Trainer from './components/TrainerPage/trainer'
+import Trainer from './components/TrainerPage/trainer'
 // import Contactus from './components/ContactusPage/Contactus'
-// import TrainerDetails from './components/TrainerPage/TrainerDetailsPage/TrainerDetails';
-// import Store from './components/Store/Store'
-// import Product from './components/Store/product/Product'
-// import Musicplayer from './components/musicPlayer/MusicPlayer'
+import TrainerDetails from './components/TrainerPage/TrainerDetailsPage/TrainerDetails';
+import Store from './components/Store/Store'
+import Product from './components/Store/product/Product'
+import Workoutgoing from './components/WorkoutPage/Workoutgoing'
 import Login from './components/Login/login';
 import Signup from './components/Signup/signup';
 import { useState, useEffect } from 'react';
 import axios from 'axios'
 import Cookies from 'js-cookie';
-// import Meditionhome from './components/Medition/meditionhome';
-// import Medition from './components/Medition/Medition';
+import ChangeworkoutPlan from './components/WorkoutPage/workoutchange';
+import Meditionhome from './components/Medition/meditionhome';
+import Medition from './components/Medition/Medition';
 
 function App() {
 
@@ -72,12 +73,15 @@ function App() {
           </Route>
           <Route path="/nutrition">
             {
-              auth?
-              <Nutrition auth={auth}/> :
-              <Redirect to="/"/>
+              auth ?
+                <Nutrition auth={auth} /> :
+                <Redirect to="/" />
             }
           </Route>
-          {/* 
+          <Route path="/workoutplan">
+            <ChangeworkoutPlan />
+          </Route>
+
           <Route path="/workout">
             <Workout />
           </Route>
@@ -92,9 +96,9 @@ function App() {
           </Route>
           <Route path="/shopProduct">
             <Product />
-          </Route>
-          <Route path="/musicplayer">
-            <Musicplayer />
+          </Route>/
+          <Route path="/workoutgoing">
+            <Workoutgoing />
           </Route>
           <Route path="/meditionhome">
             <Meditionhome />
@@ -102,7 +106,7 @@ function App() {
           <Route path="/medition">
             <Medition />
           </Route>
-          <Route path="/contactus">
+          {/* <Route path="/contactus">
             <Contactus />
           </Route> */}
         </Switch>

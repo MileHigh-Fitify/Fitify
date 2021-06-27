@@ -13,17 +13,17 @@ const Navbar = () => {
     const [modal, setModal] = useState(false);
     const [username, setUsername] = useState();
 
-    useEffect(async ()=>{
-        if(Cookies.get('user')){
+    useEffect(async () => {
+        if (Cookies.get('user')) {
             const user = Cookies.get('user');
             console.log(user)
             await axios.get(`http://localhost:5000/user/${user}`)
                 .then(
-                    res=>setUsername(res.data.username)
+                    res => setUsername(res.data.username)
                 )
 
         }
-    },[])
+    }, [])
 
     return (
         <div className={Styles.majorContainer}>
@@ -31,9 +31,10 @@ const Navbar = () => {
                 <ul>
                     <li><Link to="/home">Home</Link></li>
                     <li><Link to="/workout" >Workout</Link></li>
+                    <li><Link to="/Contactus" >Contact us</Link></li>
                     <li><Link to="/nutrition" >Nutrition</Link></li>
                     <li><Link to="/shop" >Shop</Link></li>
-                    <li><Link to="/Contactus" >Contact us</Link></li>
+                    <li><Link to="/meditionhome" >Contact us</Link></li>
                     <li><Link to="/home" >More..</Link></li>
                 </ul>
             </div>
@@ -53,6 +54,7 @@ const Navbar = () => {
                         >
                             <li><Link to="/home" onClick={() => { setModal(false) }}>Home</Link></li>
                             <li><Link to="/workout" onClick={() => { setModal(false) }} >Workout</Link></li>
+                            <li><Link to="/meditionhome" onClick={() => { setModal(false) }}>Maditation</Link></li>
                             <li><Link to="/nutrition" onClick={() => { setModal(false) }} >nutrition</Link></li>
                             <li><Link to="/Contactus" onClick={() => { setModal(false) }}>Contact us</Link></li>
                             <li><Link to="/home" onClick={() => { setModal(false) }} >More..</Link></li>

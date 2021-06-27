@@ -44,31 +44,22 @@ color: #1F2024;
 .workoutProgress{  
   display: flex;
   width: 56.90vw;
+  margin-left: 1vw;
 
 }
 .workouts1{
+  margin: 1vw;
   display: flex;
   
   position: relative;
-  left: 3.37vw;
-  top: 38.08vh;
+  
 
 background: #5A64C5;
 border-radius: 12px;
   width:27.65vw;
   height:20.42vh;
 }
-.workouts2{
-  display: flex;
-  position: relative;
-  left: 6.86vw;
-  top: 38.08vh;
 
-background: #5A64C5;
-border-radius: 12px;
-  width:27.65vw;
-  height:20.42vh;
-}
 .progressImg{
   height: 14.19vh;
   width: 6.57vw;
@@ -114,7 +105,7 @@ color: #FFFFFF;
     width: 38.4vw;
     height: 0px;
     left: 47vw;
-    top: 24.13vh;
+    top: 44vh;
     border: 2px solid #270dfd;
     transform: rotate(90deg);
   }
@@ -186,7 +177,7 @@ font-size: 1.052vw;
 line-height: 3.18vh;
   }
   .Box{
-    margin-top: 11.93vh;
+    margin-top: 33.93vh;
     height:2.65vh;
   }
   .longarmstretch{
