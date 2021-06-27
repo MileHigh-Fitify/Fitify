@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import Styles from '../HomePage/Home.module.css'
 import Navbar from '../NavBar/Navbar'
 import Progress from '../common/progress/Progress'
@@ -18,17 +18,17 @@ const Home = () => {
     const [tip, setTip] = useState();
 
 
-    useEffect(()=>{
+    useEffect(() => {
         var fdb = {
-            tip:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            tip: "Practicing good eating habits and exercise regularly can help control or defer wellbeing related to maturing, similar to hypertension and diabetes.",
         }
 
         setTip(fdb.tip)
-    },[])
+    }, [])
 
     return (
         <div className={Styles.majorContainer}>
-            <Navbar/>
+            <Navbar />
             <div className={Styles.main}>
                 <div className={Styles.dashboard}>
                     <div className={Styles.progress}>

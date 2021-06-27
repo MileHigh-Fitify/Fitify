@@ -9,9 +9,7 @@ function Madition() {
                 <h1 className={Styles.head}>
                     Stay Kalm And Composed!
                 </h1>
-                <p className={Styles.para}>Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit, sed do eiusmod tempor
-                    incididuntut labore et dolore magna aliqua.
+                <p className={Styles.para}>Meditation brings the brainwave design into an alpha express that advances healing. The psyche turns out to be new, fragile, and delightful.
                 </p>
             </div >
             <div className={Styles.data2}><img style={{ "width": "36.9vw", "height": "71.08vh", }} src={medition} alt="meditation image"></img>

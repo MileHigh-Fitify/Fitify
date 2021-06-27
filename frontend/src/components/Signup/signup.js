@@ -34,7 +34,7 @@ function Signup(props) {
             cpassword: cpassword
         }
         //console.log(details)
-        await axios.post('http://localhost:5000/user/signup', details)
+        await axios.post('https://fitifyy.herokuapp.com/user/signup', details)
             .then(res => {
                 window.alert(res.data)
             });
@@ -44,7 +44,7 @@ function Signup(props) {
             password: password
         }
         //console.log(logindetails)
-        await axios.post('http://localhost:5000/user/signin', logindetails)
+        await axios.post('https://fitifyy.herokuapp.com/user/signin', logindetails)
             .then(res => {
                 if (res.data.uid) {
                     Cookies.set('user', res.data.uid)

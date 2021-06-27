@@ -17,7 +17,7 @@ function Workoutgoing() {
                     <h1 className={Styles.workout}>Workout</h1>
                     <h6 className={Styles.diff}>Advanced   20-30mins</h6>
                     <img className={Styles.img} src="https://i.pinimg.com/originals/48/d3/18/48d318b6fd069adf7fd5ad23bf3206f6.gif"></img>
-                    <h4 className={Styles.exr}>Stratching</h4>
+                    <h4 className={Styles.exr}>Streching</h4>
                     <h2 className={Styles.exr}>5/10</h2>
                     <div className={Styles.prg}>
 

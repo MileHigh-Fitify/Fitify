@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import Styles from './Workout.module.css';
 import Navbar from '../NavBar/Navbar';
 import waightLifting from '../../images/workout/waightLifting.png';
@@ -15,31 +15,31 @@ const Workout = (props) => {
 
 
     const { auth } = props;
- 
+
     const [workout, setWorkout] = useState([]);
 
     useEffect(
-        ()=>{
-            axios.get(`http://localhost:5000/workoutplan/${auth}`)
-            .then(res=>{
-                if(res.data){
+        () => {
+            axios.get(`https://fitifyy.herokuapp.com/workoutplan/${auth}`)
+                .then(res => {
+                    if (res.data) {
 
-                    setWorkout(res.data.workoutPlan);                
-                }else{
-                    setWorkout(null)
-                }
-            })
-        },[]
+                        setWorkout(res.data.workoutPlan);
+                    } else {
+                        setWorkout(null)
+                    }
+                })
+        }, []
     )
 
-    useEffect(()=>{console.log(workout)},[workout])
+    useEffect(() => { console.log(workout) }, [workout])
 
 
 
 
-    if(!workout){
-        return(
-            <Redirect to="/workoutplan"/>
+    if (!workout) {
+        return (
+            <Redirect to="/workoutplan" />
         )
     }
     return (
@@ -102,7 +102,7 @@ const Workout = (props) => {
                     {
                         workout &&
 
-                        workout.map((res,index)=>(
+                        workout.map((res, index) => (
 
                             <div className={Styles.WorkoutList} key={index}>
                                 <img className={Styles.WorkoutImg} src={stretching} alt="stretching" />
