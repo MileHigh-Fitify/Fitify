@@ -8,6 +8,7 @@ import pic from '../../images/temp/temp.png'
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSlidersH } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 
 
 const Store = () => {
@@ -150,7 +151,7 @@ const Store = () => {
                         items &&
                         items.map((item, index) =>
                             <div className={Styles.cardCtn} key={index}>
-                                <Card item={item} />
+                                <Link className={Styles.link} to="/shopproduct"><Card item={item} /></Link>
                             </div>
                         )
                     }

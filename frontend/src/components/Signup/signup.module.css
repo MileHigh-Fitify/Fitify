@@ -89,7 +89,7 @@ color: #A3AAF5;
     display: flex;
 }
 
-input{
+.input{
     border: 2px 0px solid white;
     color: white;
     
@@ -99,7 +99,7 @@ input{
     padding: 10px;
     /* border: none; */
     width: 20.92vw;
-    height: 3.23vh;
+    height: 6.23vh;
     
     margin: 10px;
     font-family: Poppins;

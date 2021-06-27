@@ -2,6 +2,7 @@ import React from 'react'
 import Styles from './meditionhome.module.css'
 import Navbar from '../NavBar/Navbar'
 import medition from '../../images/medition/Meditation.png'
+import { Link } from 'react-router-dom'
 
 
 function Meditionhome() {
@@ -20,7 +21,7 @@ function Meditionhome() {
                             temporibus eaque nemo fugiat doloremque.
                         </p>
                         <input class={Styles.duration} type="text" placeholder="Enter Duration" />
-                        <button className={Styles.button} >Start Medition</button>
+                        <button className={Styles.button} ><Link to="/medition">Start Medition</Link></button>
 
                     </div>
 

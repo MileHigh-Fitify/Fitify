@@ -193,3 +193,9 @@ line-height: 3.18vh;
     line-height: 5.17vh;
     color: #565657;
   }
+  .a{
+    color: white !important;
+  }
+  .a:hover{
+    color:black !important;
+  }

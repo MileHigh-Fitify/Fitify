@@ -7,16 +7,16 @@ import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios'
 import Cookies from 'js-cookie'
 
-const Login = (props)=> {
+const Login = (props) => {
 
-    const {setAuth} = props;
+    const { setAuth } = props;
 
 
     const [email, setemail] = useState("");
     const [password, setpassword] = useState("");
 
 
-    
+
     const login = async (e) => {
         e.preventDefault()
         const logindetails = {
@@ -25,8 +25,8 @@ const Login = (props)=> {
         }
         //console.log(logindetails)
         await axios.post('http://localhost:5000/user/signin', logindetails)
-            .then( res => {
-                if(res.data.uid){
+            .then(res => {
+                if (res.data.uid) {
                     Cookies.set('user', res.data.uid)
                     setAuth(res.data.uid)
                 }
@@ -42,7 +42,7 @@ const Login = (props)=> {
 
                     <div className={Styles.fiels}>
                         <FontAwesomeIcon icon={faVoicemail} className={Styles.contact} />
-                        <input type="textfield" className={Styles.email} placeholder="Email"
+                        <input type="textfield" className={Styles.input} placeholder="Email"
                             onChange={(e) => {
                                 setemail(e.target.value)
                             }} />
@@ -51,7 +51,7 @@ const Login = (props)=> {
                     <div className={Styles.fiels}>
                         <FontAwesomeIcon icon={faLock} className={Styles.password} />
 
-                        <input type="password" placeholder="Password"
+                        <input className={Styles.input} type="password" placeholder="Password"
                             onChange={(e) => {
                                 setpassword(e.target.value)
                             }} />

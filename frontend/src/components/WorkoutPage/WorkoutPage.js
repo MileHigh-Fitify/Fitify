@@ -8,6 +8,7 @@ import longarmstretch from '../../images/workout/longarmstretch.png'
 import highKicks from '../../images/workout/highKicks.png'
 import skipping from '../../images/workout/skipping.png'
 import Progress from '../common/progress/Progress'
+import { Link } from 'react-router-dom'
 
 const Workout = () => {
     return (
@@ -65,8 +66,8 @@ const Workout = () => {
 
                 <div className={Styles.Box}>
                     <h1 className={Styles.workoutsListHead}>Workout</h1>
-                    <button className={Styles.startWorkout} >Start Workout</button>
-                    <button className={Styles.startWorkout} >Change Workout</button>
+                    <button className={Styles.startWorkout} ><Link className={Styles.a} to="/workoutgoing">Start Workout</Link></button>
+                    <button className={Styles.startWorkout} ><Link className={Styles.a} to="/workoutplan">Change Workout</Link></button>
                     <div className={Styles.WorkoutList}>
                         <img className={Styles.WorkoutImg} src={stretching} alt="stretching" />
                         <h1 className={Styles.WorkoutName}>Stretching</h1>

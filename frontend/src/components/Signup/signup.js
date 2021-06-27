@@ -19,7 +19,7 @@ function Signup(props) {
     //     console.log(User)
     // }, [User])
 
-    const {setAuth} = props;
+    const { setAuth } = props;
 
 
 
@@ -45,8 +45,8 @@ function Signup(props) {
         }
         //console.log(logindetails)
         await axios.post('http://localhost:5000/user/signin', logindetails)
-            .then( res => {
-                if(res.data.uid){
+            .then(res => {
+                if (res.data.uid) {
                     Cookies.set('user', res.data.uid)
                     setAuth(res.data.uid)
                 }
@@ -65,7 +65,7 @@ function Signup(props) {
                 <form className={Styles.fom}>
                     <div className={Styles.cnt}>
                         <FontAwesomeIcon icon={faUser} className={Styles.contact} />
-                        <input type="textfield" className={Styles.name} placeholder="Enter Full Name"
+                        <input className={Styles.input} type="textfield" placeholder="Enter Full Name"
                             onChange={(e) => {
                                 setUsername(e.target.value)
                             }} />
@@ -73,7 +73,7 @@ function Signup(props) {
                     </div>
                     <div className={Styles.cnt}>
                         <FontAwesomeIcon icon={faPhone} className={Styles.contact} />
-                        <input type="number" className={Styles.phoneno} placeholder="Phone no"
+                        <input className={Styles.input} type="number" placeholder="Phone no"
                             onChange={(e) => {
                                 setphoneno(e.target.value)
                             }} />
@@ -81,21 +81,21 @@ function Signup(props) {
 
                     <div className={Styles.cnt1}>
                         <FontAwesomeIcon icon={faVoicemail} className={Styles.contact} />
-                        <input type="textfield" className={Styles.email} placeholder="Email" onChange={(e) => {
+                        <input className={Styles.input} type="textfield" placeholder="Email" onChange={(e) => {
                             setemail(e.target.value)
                         }} />
                     </div>
 
                     <div className={Styles.cnt} >
                         <FontAwesomeIcon icon={faLock} className={Styles.contact} />
-                        <input type="password" placeholder="Password" onChange={(e) => {
+                        <input className={Styles.input} type="password" placeholder="Password" onChange={(e) => {
                             setpassword(e.target.value)
                         }} />
                     </div>
 
                     <div className={Styles.cnt}>
                         <FontAwesomeIcon icon={faLock} className={Styles.contact} />
-                        <input type="password" placeholder="Conform Password" onChange={(e) => {
+                        <input className={Styles.input} type="password" placeholder="Conform Password" onChange={(e) => {
                             setcpassword(e.target.value)
                         }} />
                     </div>

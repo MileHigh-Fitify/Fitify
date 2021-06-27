@@ -31,10 +31,12 @@ const Navbar = () => {
                 <ul>
                     <li><Link to="/home">Home</Link></li>
                     <li><Link to="/workout" >Workout</Link></li>
-                    <li><Link to="/Contactus" >Contact us</Link></li>
+
+                    <li><Link to="/meditionhome" >Maditation</Link></li>
                     <li><Link to="/nutrition" >Nutrition</Link></li>
                     <li><Link to="/shop" >Shop</Link></li>
-                    <li><Link to="/meditionhome" >Contact us</Link></li>
+                    <li><Link to="/Contactus" >Contact us</Link></li>
+
                     <li><Link to="/home" >More..</Link></li>
                 </ul>
             </div>

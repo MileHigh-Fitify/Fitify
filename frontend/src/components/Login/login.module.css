@@ -43,7 +43,7 @@ color: #A3AAF5;
     align-items: center;
     position: relative;
     justify-content: center;
-    top: 0vh;
+    top: 3vh;
     
     
     display: grid;
@@ -69,8 +69,8 @@ color: #A3AAF5;
     
 }
 
-input{
-    border: 2px 0px solid white;
+.input{
+    /* border: 2px 0px solid white; */
     color: white;
     
     background-color: #1F2024 !important;
