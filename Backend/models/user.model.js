@@ -7,6 +7,7 @@ const userdata = new Schema({
     email: { type: String, required: true },
     password: { type: String, required: true },
     cpassword: { type: String, required: true },
+    waterCount: {type:Number, required: true },
 },
     {
         timestamps: true,
