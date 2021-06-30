@@ -24,6 +24,7 @@ function App() {
 
 
   const [auth, setAuth] = useState(null)
+  const [time, setTime] = useState(null)
 
   useEffect(async () => {
     if (Cookies.get('user')) {
@@ -104,10 +105,10 @@ function App() {
             <Workoutgoing />
           </Route>
           <Route path="/meditionhome">
-            <Meditionhome />
+            <Meditionhome time={time} setTime={setTime} />
           </Route>
           <Route path="/medition">
-            <Medition />
+            <Medition time={time} setTime={setTime} />
           </Route>
           {/* <Route path="/contactus">
             <Contactus />

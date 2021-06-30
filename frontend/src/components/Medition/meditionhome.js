@@ -5,7 +5,10 @@ import medition from '../../images/medition/Meditation.png'
 import { Link } from 'react-router-dom'
 
 
-function Meditionhome() {
+function Meditionhome(props) {
+
+    const {time, setTime} = props;
+
     return (
         <div>
             <div className={Styles.majorContainer}>
@@ -20,7 +23,7 @@ function Meditionhome() {
                             explicabo omnis vel cum blanditiis, corporis, magni praesentium quam
                             temporibus eaque nemo fugiat doloremque.
                         </p>
-                        <input class={Styles.duration} type="text" placeholder="Enter Duration" />
+                        <input class={Styles.duration} type="text" placeholder="Enter Duration" onChange={(e)=>{setTime((e.target.value * 1000))}}/>
                         <button className={Styles.button} ><Link to="/medition">Start Medition</Link></button>
 
                     </div>
