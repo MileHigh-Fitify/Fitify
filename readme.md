@@ -63,10 +63,7 @@ It is web app and android app for doctors and patients to communicate with each 
 
 
 
-<img src="./frontend/src/images/workoutstraightplan.png" width=100>
-<img src="./frontend/src/images/ecommerceshop.png" width=100>
-<img src="./frontend/src/image/../images/medition/Meditation.png" width=180> 
-<img src="./frontend/src/images/trainerSelection.png" width=100>
+<img src="./frontend/src/images/workoutstraightplan.png" width=100><img src="./frontend/src/images/ecommerceshop.png" width=100><img src="./frontend/src/image/../images/medition/Meditation.png" width=180><img src="./frontend/src/images/trainerSelection.png" width=100>
 <br>
 <br>
 <br>
@@ -117,5 +114,5 @@ Team Name: B1NARY B0SSES
 - [Sneha Maurya](https://github.com/sneha1012)
 
 <br>
-<img src="./frontend/src/images/dumbbell.png" width=50,><img src="./frontend/src/images/dumbbell.png" width=50, padding:2><img src="./frontend/src/images/dumbbell.png"width=50, padding:2><img src="./frontend/src/images/dumbbell.png" width=50, padding:2><img src="./frontend/src/images/dumbbell.png" width=50, padding:2>
+<img src="./frontend/src/images/dumbbell.png" width=50,><img src="./frontend/src/images/dumbbell.png" width=50, padding:2><img src="./frontend/src/images/dumbbell.png" width=50, padding:2><img src="./frontend/src/images/dumbbell.png" width=50, padding:2><img src="./frontend/src/images/dumbbell.png" width=50, padding:2>
 
