@@ -2,11 +2,7 @@
 
 # Hack The Mountain : Mile High
 # Fitify <br>
-<img src="./frontend/src/images/dumbbell.png" width=50,>
-<img src="./frontend/src/images/dumbbell.png" width=50, padding:2>
-<img src="./frontend/src/images/dumbbell.png" width=50, padding:2>
-<img src="./frontend/src/images/dumbbell.png" width=50, padding:2>
-<img src="./frontend/src/images/dumbbell.png" width=50, padding:2>
+<img src="./frontend/src/images/dumbbell.png" width=50,><img src="./frontend/src/images/dumbbell.png" width=50, padding:2><img src="./frontend/src/images/dumbbell.png" width=50, padding:2><img src="./frontend/src/images/dumbbell.png" width=50, padding:2><img src="./frontend/src/images/dumbbell.png" width=50, padding:2>
 
 
 #### Official Entry of Team Mile High , from SRM Institute of Science and Technology Kattankulathur, to Hack The Mountain
@@ -121,9 +117,5 @@ Team Name: B1NARY B0SSES
 - [Sneha Maurya](https://github.com/sneha1012)
 
 <br>
-<img src="./frontend/src/images/dumbbell.png" width=50,>
-<img src="./frontend/src/images/dumbbell.png" width=50, padding:2>
-<img src="./frontend/src/images/dumbbell.png" width=50, padding:2>
-<img src="./frontend/src/images/dumbbell.png" width=50, padding:2>
-<img src="./frontend/src/images/dumbbell.png" width=50, padding:2>
+<img src="./frontend/src/images/dumbbell.png" width=50,><img src="./frontend/src/images/dumbbell.png" width=50, padding:2><img src="./frontend/src/images/dumbbell.png" width=50, padding:2><img src="./frontend/src/images/dumbbell.png" width=50, padding:2><img src="./frontend/src/images/dumbbell.png" width=50, padding:2>
 
