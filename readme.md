@@ -106,7 +106,7 @@ It is web app and android app for doctors and patients to communicate with each 
 
 ## Collaborators 👩🏻‍🤝‍🧑🏻👨🏻‍🤝‍👨🏻
 
-Team Name: B1NARY B0SSES
+Team Name: Mile High
 
 - [Sanskar Gupta](https://github.com/sanskar0901)
 - [Samresh Samanta](https://github.com/nectro/)
