@@ -22,7 +22,7 @@
 ## Problem Statement 🚧
 Improving the quality of life of users and effeciency of medical care by connecting doctors and patients virtually without having them to step out of their homes.
 
-<h3>Login / sign up system</h2>
+<h3>Login / Sign up system</h2>
 
 We will be providing our users the system to sign up and login within the app to maintain and keep a proper track of their progress and goals.
 
